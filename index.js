@@ -8,10 +8,20 @@ alert(rules)
 
 let number = 42 // число, которое загадал компьютер
 let guess = prompt('Какое число я загадал?')
+let amountAttempt =0//количество попыток
 
 while (guess != number) {
-    if (number < guess) guess = prompt('Много. Попробуй ещё раз')
-    if (number > guess) guess = prompt('Мало. Попробуй ещё раз')
+    if (number < guess) {
+        guess = prompt('Много. Попробуй ещё раз')
+
+        amountAttempt++
+    }
+
+    if (number > guess) {
+        guess = prompt('Мало. Попробуй ещё раз')
+
+        amountAttempt++
+    }
 }
 
-alert('Ты угадал! Это число '+ number)
+alert('Ты угадал! Это число '+ number + '. Количество потраченных попыток - ' + amountAttempt + '.')
